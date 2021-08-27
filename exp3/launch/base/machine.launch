@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <launch>
+<arg name="model" default="$(env TURTLEBOT3_MODEL)" doc="model type [waffle, waffle_pi]"/>
 <arg name="use_robot_name" default="tb3"/>
 <arg name="set_lidar_frame_id" default="base_scan"/>
 <arg name="id" default="09"/>
@@ -22,10 +23,20 @@
 
   <node machine="tb3" pkg="hls_lfcd_lds_driver" type="hlds_laser_publisher" name="turtlebot3_lds" output="screen">
     <param name="port" value="/dev/ttyUSB0"/>
-    <param name="frame_id" value="$(arg set_lidar_frame_id)"/>
+    <param name="frame_id" value="$(arg use_robot_name)/$(arg set_lidar_frame_id)"/>
   </node>
 
   <node machine="tb3" pkg="turtlebot3_bringup" type="turtlebot3_diagnostics" name="turtlebot3_diagnostics" output="screen"/>
+
+  <!-- 
+  following nodes are activated on host PC
+  -->
+  <param name="robot_description"
+         command="$(find xacro)/xacro --inorder '$(find open_manipulator_with_tb3_description)/urdf/open_manipulator_with_tb3_$(arg model).urdf.xacro'"/>
+  <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" output="screen">
+    <param name="publish_frequency" type="double" value="100.0" />
+    <param name="tf_prefix" value="$(arg use_robot_name)" />
+  </node>
 </group>
 </launch>
 

@@ -163,91 +163,19 @@ Visualization Manager:
       Value: true
       Visual Enabled: true
     - Class: rviz/TF
-      Enabled: true
+      Enabled: false
       Frame Timeout: 15
       Frames:
         All Enabled: false
-        map:
-          Value: true
-        tb3/base_footprint:
-          Value: true
-        tb3/base_link:
-          Value: true
-        tb3/base_scan:
-          Value: true
-        tb3/camera_link:
-          Value: true
-        tb3/camera_rgb_frame:
-          Value: true
-        tb3/camera_rgb_optical_frame:
-          Value: true
-        tb3/caster_back_left_link:
-          Value: true
-        tb3/caster_back_right_link:
-          Value: true
-        tb3/end_effector_link:
-          Value: true
-        tb3/gripper_link:
-          Value: true
-        tb3/gripper_link_sub:
-          Value: true
-        tb3/imu_link:
-          Value: true
-        tb3/link1:
-          Value: true
-        tb3/link2:
-          Value: true
-        tb3/link3:
-          Value: true
-        tb3/link4:
-          Value: true
-        tb3/link5:
-          Value: true
-        tb3/odom:
-          Value: true
-        tb3/wheel_left_link:
-          Value: true
-        tb3/wheel_right_link:
-          Value: true
       Marker Scale: 1
       Name: TF
       Show Arrows: true
       Show Axes: true
       Show Names: true
       Tree:
-        map:
-          tb3/odom:
-            tb3/base_footprint:
-              tb3/base_link:
-                tb3/base_scan:
-                  {}
-                tb3/camera_link:
-                  tb3/camera_rgb_frame:
-                    tb3/camera_rgb_optical_frame:
-                      {}
-                tb3/caster_back_left_link:
-                  {}
-                tb3/caster_back_right_link:
-                  {}
-                tb3/imu_link:
-                  {}
-                tb3/link1:
-                  tb3/link2:
-                    tb3/link3:
-                      tb3/link4:
-                        tb3/link5:
-                          tb3/end_effector_link:
-                            {}
-                          tb3/gripper_link:
-                            {}
-                          tb3/gripper_link_sub:
-                            {}
-                tb3/wheel_left_link:
-                  {}
-                tb3/wheel_right_link:
-                  {}
+        {}
       Update Interval: 0
-      Value: true
+      Value: false
     - Alpha: 1
       Autocompute Intensity Bounds: true
       Autocompute Value Bounds:
@@ -536,4 +464,4 @@ Window Geometry:
     collapsed: true
   Width: 1576
   X: 182
-  Y: 326
+  Y: 296

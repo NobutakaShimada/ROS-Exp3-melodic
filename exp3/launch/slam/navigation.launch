@@ -8,7 +8,8 @@
   <arg name="use_ar_marker"          default="false" />
   <arg name="marker_frame_id"        default="$(arg use_robot_name)/base_footprint" />
 
-  <arg name="map_file"       default="$(find exp3)/map/newmap.yaml"/>
+  <arg name="map_dir" default="$(find exp3)/map"/>
+  <arg name="map_name" default="newmap"/>
 
   <arg name="scan_topic"     default="scan_filtered"/>
   <arg name="initial_pose_x" default="0.0"/>
@@ -22,7 +23,7 @@
     </node>  
 
     <!-- Map Server -->
-    <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)"/>
+    <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_dir)/$(arg map_name).yaml"/>
 
     <!-- Move Base -->
     <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
